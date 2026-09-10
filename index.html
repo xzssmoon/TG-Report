@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Report — Массовые жалобы на Telegram-аккаунт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚠️ TG Report</h1>
+            <p class="subtitle">Массовая отправка жалоб на Telegram-аккаунт</p>
+        </header>
+
+        <main>
+            <div class="form-group">
+                <label for="target">Номер телефона или @username</label>
+                <input type="text" id="target" placeholder="+79001234567 или @username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Причина жалобы</label>
+                <select id="reason">
+                    <option value="spam">Спам / реклама</option>
+                    <option value="scam">Мошенничество</option>
+                    <option value="violence">Насилие / угрозы</option>
+                    <option value="child">Детский контент</option>
+                    <option value="terror">Терроризм</option>
+                    <option value="drugs">Наркотики</option>
+                    <option value="copyright">Нарушение авторских прав</option>
+                    <option value="other">Другое</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Комментарий (необязательно)</label>
+                <textarea id="comment" rows="3" placeholder="Опишите ситуацию..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="count">Количество жалоб</label>
+                <input type="range" id="count" min="1" max="100" value="10">
+                <span id="countValue">10</span>
+            </div>
+
+            <button id="submitBtn" class="btn-primary">🚀 Отправить жалобы</button>
+
+            <div id="status" class="status"></div>
+
+            <div class="info">
+                <h3>Как это работает</h3>
+                <ul>
+                    <li>Жалоба отправляется в Telegram Support через официальный канал</li>
+                    <li>Дополнительно аккаунт добавляется в стоп-листы ботов</li>
+                    <li>Все жалобы логируются в Firebase</li>
+                    <li>Количество жалоб влияет на скорость реакции модерации</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="report.js"></script>
+</body>
+</html>
